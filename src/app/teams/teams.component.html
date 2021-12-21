@@ -1,0 +1,25 @@
+<div class="card-body text-primary">
+  <h5>Listado de Clientes</h5>
+  <div class="my-2 text-left">
+    <button *ngIf="!authService.token" class="btn btn-rounded btn-primary" type="button"
+      [routerLink]="['/teams/crear']">
+      New Team
+    </button>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div *ngFor="let team of teams" class="card m-4" style="width: 18rem;">
+      <img src="{{team.image}}" class="card-img-top" alt="{{team.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{team.name}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{team.city}} - {{team.country}}</li>
+        <li class="list-group-item">Himno: {{team.himno}}</li>
+        <li class="list-group-item">UCL Trophies: {{team.uclTrophies}}</li>
+      </ul>
+      <div class="card-body">
+        <button class="btn bg-bluedark" style="background-color: darkblue;color:white">Show Details</button>
+      </div>
+    </div>
+  </div>
+</div>
