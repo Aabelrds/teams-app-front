@@ -1,8 +1,8 @@
 <div class="card-body text-primary">
-  <h5>Listado de Clientes</h5>
+  <h5>La liga Teams</h5>
   <div class="my-2 text-left">
-    <button *ngIf="!authService.token" class="btn btn-rounded btn-primary" type="button"
-      [routerLink]="['/teams/crear']">
+    <button *ngIf="authService.token" class="btn btn-rounded btn-primary" type="button"
+      [routerLink]="['/teams/new']">
       New Team
     </button>
   </div>
@@ -17,8 +17,17 @@
         <li class="list-group-item">Himno: {{team.himno}}</li>
         <li class="list-group-item">UCL Trophies: {{team.uclTrophies}}</li>
       </ul>
-      <div class="card-body">
-        <button class="btn bg-bluedark" style="background-color: darkblue;color:white">Show Details</button>
+      <div class="card-body d-flex justify-content-around">
+
+        <button (click)="delete(team)" class="btn btn-danger">
+          Delete
+        </button>
+
+        <button class="btn" style="background-color: darkblue;
+         color: white;"
+         [routerLink]="['/teams/update',team.id]">
+                Update
+          </button>
       </div>
     </div>
   </div>

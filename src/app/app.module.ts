@@ -11,6 +11,8 @@ import { PlayersComponent } from './players/players.component';
 import { TeamsComponent } from './teams/teams.component';
 import { LoginComponent } from './usuarios/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,12 +22,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     PlayersComponent,
     TeamsComponent,
-    LoginComponent
+    LoginComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [TeamService,PlayerService],
   bootstrap: [AppComponent]
