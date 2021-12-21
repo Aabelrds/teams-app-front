@@ -1,4 +1,7 @@
+import swal  from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService, private router : Router) { }
 
   ngOnInit(): void {
+
+
+  }
+
+  logOut():void{
+    let userName = this.authService.usuario.username;
+    this.authService.logout();
+    swal('Succes', `${userName}, You have successfully logged out! `, 'success');
+    this.router.navigate(['/login']);
   }
 
 }

@@ -23,7 +23,7 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
 
     if (this.authService.usuario.username== null) {
-      swal('Error', `Debes Iniciar Sesion!`, 'info');
+      swal('Error', `Debes Iniciar Sesion!`, 'error');
       this.router.navigate(['/login']);
     }
 

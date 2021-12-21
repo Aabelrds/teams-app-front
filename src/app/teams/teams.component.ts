@@ -29,11 +29,11 @@ export class TeamsComponent implements OnInit {
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
+      confirmButtonText: ' Si, eliminar!',
+      confirmButtonClass: ' btn btn-success',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar!',
-      cancelButtonText: 'No, cancelar!',
-      confirmButtonClass: 'btn btn-success',
-      cancelButtonClass: 'btn btn-danger',
+      cancelButtonText: ' No, cancelar!',
+      cancelButtonClass: ' btn btn-danger',
       buttonsStyling: false,
       reverseButtons: true
     }).then((result:SweetAlertResult) => {
